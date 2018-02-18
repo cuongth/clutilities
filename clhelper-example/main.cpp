@@ -19,6 +19,7 @@
 #include <cmath>
 #include <assert.h>
 #include <sys/time.h>
+#include <cstring>
 
 #include "../clhelper.h"
 
@@ -72,7 +73,7 @@ int main(int argc, const char * argv[]) {
 
 	// Initialize OpenCL and create leap_frog integration kernel
     initOpenCL();
-	cl_program program = buildCLProgram("calc.cl");
+	cl_program program = buildCLProgram("calc.cl", NULL);
     cl_kernel kernel = buildCLKernel(program, "leap_frog");
 
     // Create memory buffer andy copy universe

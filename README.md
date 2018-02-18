@@ -1,7 +1,7 @@
 clutilities
 ===========
 
-Various OpenCL helpers and utilities, all made for Mac OS X.
+Various OpenCL helpers and utilities, all made for Mac OS X and Linux.
 
 clhelper
 --------

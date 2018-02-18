@@ -12,11 +12,21 @@
  * (Jan-Gerd Tenberge, 30 May 2012)
  */
 
+//  On Mac OS X compile with
+//      clang clinfo.cpp -framework OpenCL -o ncl
+//
+//  On Linux use
+//      gcc clinfo.c -lOpenCL -o clinfo
+
 #include <stdio.h>
 #include <getopt.h>
 #include <stdlib.h>
 
-#include "OpenCL/opencl.h"
+#if defined __APPLE__ || defined(MACOSX)
+    #include <OpenCL/opencl.h>
+#else
+    #include <CL/opencl.h>
+#endif
 
 #define Warning(...)    fprintf(stderr, __VA_ARGS__)
 
